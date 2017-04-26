@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+</head>
+<body>
+<form method="post" action="registerServlet"><!-- 꼭 써줘야하는것, form method=> get은 다 드러내는것, post는 안드러나고 바로 넘어가는거 -->
+	<table>
+		<tr>
+			<th><h2>회원가입</h2></th>
+		</tr>
+
+		<tr>
+			<td>
+
+				<h3>
+					<span style="color: red"><b>*</b></span> 온라인 회원가입 작성
+				</h3>
+
+			</td>
+
+		</tr>
+
+		<tr>
+			<td><hr style="width: 670px">
+				<ul>
+					<small><li>고객님의 정보는 개인정보보호정책에 의해 철저하게 보호됩니다.</li> <small>
+				</ul>
+				<hr></td>
+		</tr>
+
+		<table border="1"border-right-style:hidden; border-left-style:hidden; border-collapse:collapse; height: 400px">
+			<!-- 사용자id~휴대폰번호까지의 테이블-->
+			<tr>
+				<td><label for="id">&nbsp;사 용 자 ID <span
+						style="color: red"><b>*</b></span></label></td>
+				<td>&nbsp;<input type="text" id="id" name="id" required="required">
+					<input type="button" value="ID중복확인"></td>
+				<!-- 히든쓰면 된다는데 잘 모르겠음 -->
+			</tr>
+
+			<tr>
+				<td><label for="pw">&nbsp;비 밀 번 호 <span
+						style="color: red"><b>*</b></span></label></td>
+				<td>&nbsp;<input type="password" id="pw" name="pw" required="required"><small>&nbsp;●
+						4~12자리의 영문,숫자,특수문자(!,@,$,%,^,&,*)만 가능
+						</li>
+				</small>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label for="pwconfirm">&nbsp;비밀번호 확인 <span
+						style="color: red"><b>*</b></span></label></td>
+				<td>&nbsp;<input type="password" id="pwconfirm" name="pwconfirm"
+					required="required"></td>
+			</tr>
+
+			<tr>
+				<td><label for="name">&nbsp;성 명 <span
+						style="color: red"><b>*</b></span></label></td>
+				<td>&nbsp;<input type="text" id="name" name="name" required="required"><small>&nbsp;●
+						띄어쓰기 없이 입력, 반드시 실명이어야 합니다!</small>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label for="mail">&nbsp;E-mail <span
+						style="color: red"><b>*</b></span></label></td>
+				<td>&nbsp;<input type="email" id="mail" name="mail" required="required"><strong>&nbsp;&nbsp;메일
+						수신여부</strong><br>
+					<ul>
+						<small><li><b>할인 이벤트정보</b> 및 할인쿠폰, 관심분야 등 꼭 필요한 정보를
+								빠르게 받아보실 수 있습<br>니다.</li></small>
+						<small><li>비밀번호 분실시 E-mail로 확인해 드리니, <strong><span
+									style="color: green">정확한 E-mail주소를 기입</span></strong>해 주세요.
+						</li></small>
+					</ul></td>
+			</tr>
+
+			<tr>
+				<td><label for="postcode1">&nbsp;우 편 번 호 <span
+						style="color: red"><b>*</b></span></label></td>
+				<td>&nbsp;<input type="number" name="postcode1" id="postcode1"
+					style="width: 60px" title="우편번호 앞자리" readonly="readonly"
+					required="required"> - <input type="number" id="postcode2" name="postcode2"
+					style="width: 60px" title="우편번호 뒷자리" readonly="readonly"
+					required="required"> <a
+					href="http://www.epost.go.kr/search.RetrieveNewAddressNewZipCdList.comm"
+					target="_blank"><input type="button" value="우편번호 검색"></a></td><!--id는 db로 넘어가는 이름, name은 그냥 보기편하라고-->
+			</tr>
+
+			<tr>
+				<td><label for="addr1">&nbsp;주 소 <span
+						style="color: red"><b>*</b></span></label></td>
+				<td>&nbsp;<input type="text" name="addr1" id="addr1"
+					title="주소앞부분" readonly="readonly" required="required"
+					style="width: 400px"><br> &nbsp;<input type="text"
+					name="addr1" id="addr2" title="주소뒷부분" required="required"
+					style="width: 400px"></td>
+			</tr>
+
+			<tr>
+				<td><label for="phone1">&nbsp;휴 대 폰 번 호 <span
+						style="color: red"><b>*</b></span></label></td>
+				<td>&nbsp;<input type="tel" name="phone1" id="phone1"
+					title="휴대폰앞자리" required="required" min="0" style="width: 50px">
+					- <input type="tel" name="phone2" title="휴대폰중간자리"
+					required="required" style="width: 50px" min="0"> - <input
+					type="tel" name="phone3" title="휴대폰뒷자리" required="required" min="0"
+					style="width: 50px"></td><!--value는 라디오버튼이랑 체크박스만 필수, select(콤보박스)옵션에도 value써주기 -->
+			</tr>
+
+		</table>
+	</table>
+	<br>
+		<input type="submit" value="다음" style="margin-left: 350px"><!--form은 전체값을 넘겨줘야해서 맨위에 body밑에 써준다. submit은 1창에 1개밖에 못씀 -->
+	</form>
+</body>
+</html>
